@@ -44,12 +44,16 @@ print(num_within(10,2,5))
 #Note : Pascal's triangle is an arithmetic and geometric figure first imagined by Blaise Pascal. Each number is the two numbers above it added together.
 
 def pascal(num_rows):
+    if num_rows <= 0:
+        print("Must be atlease 1 row")
+        return None
+    
     triangle = []
     for row_num in range(num_rows):
-        row = [1] * (row_num + 1)
-        for g in range(1, row_num):
-            row[g] = triangle[row_num - 1][g - 1] + triangle[row_num - 1][g]
-        triangle.append(row)
+            row = [1] * (row_num + 1)
+            for g in range(1, row_num):
+                row[g] = triangle[row_num - 1][g - 1] + triangle[row_num - 1][g]
+            triangle.append(row)
     return triangle
     
 num_rows = 7
